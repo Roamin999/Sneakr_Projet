@@ -1,10 +1,8 @@
 import pandas as pd
 import json
 
-# Chemin du fichier JSON d'entrée
-input_file = "./sneakerData.json"
 
-# Chemin du fichier TSV de sortie
+input_file = "./sneakerData.json"
 output_file = "./sneakerData.tsv"
 
 # Charger le fichier JSON dans un DataFrame pandas
