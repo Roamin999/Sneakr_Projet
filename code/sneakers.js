@@ -32,8 +32,8 @@ const fetchAllData = async () => {
     }
 
     const jsonData = JSON.stringify(allData, null, 2);
-    fs.writeFileSync('sneakerData.json', jsonData);
-    console.log('All data saved to sneakersData.json');
+    fs.writeFileSync('sneakerDataTransfer.json', jsonData);
+    console.log('All data saved to sneakersDataTransfer.json');
 };
 
 fetchAllData();
