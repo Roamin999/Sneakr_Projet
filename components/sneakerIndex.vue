@@ -1,15 +1,22 @@
+
 <template>
-    <h1 id="title">SneakR</h1>
-    <article v-for="sneaker in sneakers" :key="sneaker.id" class="colonne">
-        <div id="eachSneakers">
-
-            <img :src="sneaker.attributes.small_image_url" id="sneak" alt="Sneaker Image">
-            {{ sneaker.attributes.name }} - Retail {{ sneaker.attributes.retailPrice }} €
-
-
-        </div>
-    </article>
+    
+    <h1 id="Title"> SneakR </h1>
+    <div id="grid">
+        <article
+            v-for="sneaker in sneakers"
+            :key="sneaker.id"
+            class="card"
+        >
+            <img :src="sneaker.attributes.small_image_url" class="sneaker-image" alt="Sneaker Image">
+            <div class="sneaker-details">
+                <h3 class="sneaker-name">{{ sneaker.attributes.name }}</h3>
+                <p class="sneaker-price">Retail {{ sneaker.attributes.retailPrice }} €</p>
+            </div>
+        </article>
+    </div>
 </template>
+
 
 <script>
 export default {
@@ -51,19 +58,45 @@ export default {
 </script>
 
 <style>
-#title {
+#Title {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 50px;
     text-align: center;
 }
-
-#sneak {
-    width: 50%;
+#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
 }
 
-#eachSneakers {
-    list-style: none;
+.card {
     display: flex;
     flex-direction: column;
-  }
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #1f2937;
+}
+
+.sneaker-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.sneaker-details {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.sneaker-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sneaker-price {
+    font-size: 14px;
+    color: #888;
+}
 </style>
