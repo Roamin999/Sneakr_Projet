@@ -1,13 +1,10 @@
-
 <template>
-    
-    <h1 id="Title"> SneakR </h1>
+    <article class="header">
+        <img src="../assets/logo_SneakR.jpg" class="logo-SneakR" alt="Sneaker Image">
+        <Title id="Title"> SneakR </Title>
+    </article>
     <div id="grid">
-        <article
-            v-for="sneaker in sneakers"
-            :key="sneaker.id"
-            class="card"
-        >
+        <article v-for="sneaker in sneakers" :key="sneaker.id" class="card">
             <img :src="sneaker.attributes.small_image_url" class="sneaker-image" alt="Sneaker Image">
             <div class="sneaker-details">
                 <h3 class="sneaker-name">{{ sneaker.attributes.name }}</h3>
@@ -57,26 +54,42 @@ export default {
 };
 </script>
 
-<style>
-#Title {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 50px;
-    text-align: center;
-}
-#grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+
+<style scooped>
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 1%;
 }
 
+#Title {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 100px;
+    text-align: center;
+    position: absolute;
+    left: 40%;
+    color: #8cd8ff;
+}
+
+.logo-SneakR {
+    width: 10%;
+    min-width: 125px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 5fr));
+    gap: 20px;
+}
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #00aaff;
     border-radius: 5px;
-    background-color: #1f2937;
 }
 
 .sneaker-image {
@@ -97,6 +110,6 @@ export default {
 
 .sneaker-price {
     font-size: 14px;
-    color: #888;
+    color: #8cd8ff;
 }
 </style>
