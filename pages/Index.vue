@@ -1,5 +1,5 @@
 <template>
-
+  
 <SneakerIndex/>
 
   </template>   
