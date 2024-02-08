@@ -12,12 +12,13 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/strapi": "^1.10.1",
-    "nuxt": "^3.8.2",
+    "nuxt": "^3.9.3",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@nuxt/http": "^0.6.4",
-    "axios": "^1.6.2"
+    "axios": "^1.6.2",
+    "vite": "^5.0.12"
   }
 }
