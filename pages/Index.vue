@@ -19,7 +19,7 @@
   </div>
   <div id="page">
       <button @click="previousPage">Previous Page</button>
-      <input type="text" v-model="pageNumber" id="actualPage" />
+      <input type="text" v-model="pageNumber" id="actualPage"/> 
       <button @click="nextPage">Next Page</button>
   </div>
   <title v-html="pageTitle"></title>
